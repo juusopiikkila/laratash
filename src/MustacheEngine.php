@@ -18,10 +18,15 @@ class MustacheEngine implements EngineInterface
     public function get($path, array $data = array())
     {
         $view = $this->files->get($path);
+
+        if(isset($data['_raw']) && $data['_raw'] === true) {
+            return $view;
+        }
+
         $app = app();
 
         $m = new Mustache_Engine($app['config']->get('laratash'));
- 
+
         if (isset($data['__context']) && is_object($data['__context'])) {
             $data = $data['__context'];
         } else {
@@ -29,7 +34,7 @@ class MustacheEngine implements EngineInterface
                 return (is_object($item) && method_exists($item, 'toArray')) ? $item->toArray() : $item;
             }, $data);
         }
- 
+
         return $m->render($view, $data);
     }
 }
