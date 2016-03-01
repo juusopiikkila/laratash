@@ -1,9 +1,9 @@
 {
-    "name": "brightmachine/laratash",
+    "name": "juusopiikkila/laratash",
     "type": "library",
     "description": "A Laravel 5+ wrapper for mustache.php, a PHP implementation of http://mustache.github.io/",
     "keywords": ["laravel", "laravel 5", "mustache", "php"],
-    "homepage": "https://github.com/brightmachine/laratash",
+    "homepage": "https://github.com/juusopiikkila/laratash",
     "license": "MIT",
     "authors": [
         {
@@ -13,7 +13,11 @@
         {
             "name":     "Kelvin Jones",
             "email":    "kelvin@brightmachine.co.uk"
-        }
+        },
+        {
+            "name":     "Juuso Piikkilä",
+            "email":    "juuso.piikkila@gmail.com"
+        },
     ],
     "require": {
         "php": ">=5.4.0",
